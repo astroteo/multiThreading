@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/producer.h
+iostream
+-
+cstring
+-
+cstdlib
+-
+stdlib.h
+-
+queue
+-
+
+/Users/teobaiguera/Documents/Study/MetaSensing/src/producer.cpp
+producer.h
+/Users/teobaiguera/Documents/Study/MetaSensing/src/producer.h
+

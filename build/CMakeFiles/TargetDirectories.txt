@@ -1,0 +1,4 @@
+/Users/teobaiguera/Documents/Study/MetaSensing/build/CMakeFiles/rebuild_cache.dir
+/Users/teobaiguera/Documents/Study/MetaSensing/build/CMakeFiles/edit_cache.dir
+/Users/teobaiguera/Documents/Study/MetaSensing/build/CMakeFiles/metaSensingTest.dir
+/Users/teobaiguera/Documents/Study/MetaSensing/build/CMakeFiles/pLib.dir
