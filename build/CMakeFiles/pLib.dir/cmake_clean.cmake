@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pLib.dir/src/consumer.cpp.o"
   "CMakeFiles/pLib.dir/src/producer.cpp.o"
-  "libpLib.a"
   "libpLib.pdb"
+  "libpLib.a"
 )
 
 # Per-language clean rules from dependency scanning.

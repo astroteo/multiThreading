@@ -3,8 +3,11 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <queue>
+#include <mutex>
+#include <condition_variable>
 
 using namespace std;
+
 class Consumer
 {
   public:

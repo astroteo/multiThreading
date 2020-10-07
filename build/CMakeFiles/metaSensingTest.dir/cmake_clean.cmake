@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/metaSensingTest.dir/main.cpp.o"
-  "metaSensingTest"
   "metaSensingTest.pdb"
+  "metaSensingTest"
 )
 
 # Per-language clean rules from dependency scanning.

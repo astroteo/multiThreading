@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -17,6 +17,10 @@ stdlib.h
 -
 queue
 -
+mutex
+-
+condition_variable
+-
 
 ../include/producer.h
 iostream
@@ -29,12 +33,16 @@ stdlib.h
 -
 queue
 -
+mutex
+-
+condition_variable
+-
 
-/Users/teobaiguera/Documents/Study/MetaSensing/main.cpp
+/home/teo-ssd/multiThreading/main.cpp
 thread
 -
 consumer.h
-/Users/teobaiguera/Documents/Study/MetaSensing/consumer.h
+/home/teo-ssd/multiThreading/consumer.h
 producer.h
-/Users/teobaiguera/Documents/Study/MetaSensing/producer.h
+/home/teo-ssd/multiThreading/producer.h
 

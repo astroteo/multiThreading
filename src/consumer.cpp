@@ -22,17 +22,18 @@ Consumer::doJob()
 
         for (int i = q->size()-1; i==0; i--)
         {
-          this->sum +=  q->front();
+          this->sum += q->front();
           q->pop();
           producer_cv->notify_all();
 
         }
 
         cout << "buffer sum = " << this->sum << endl;
-        cout << "buffer length = " << q-> size() << endl;
+        cout << "buffer length = " << q->size() << endl;
       }
       else
       {
+        this->sum = 0;
         consumer_cv->wait(lk, [this]{ return !q->empty(); });
       }
 

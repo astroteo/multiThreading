@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/teobaiguera/Documents/Study/MetaSensing/src/consumer.cpp" "/Users/teobaiguera/Documents/Study/MetaSensing/build/CMakeFiles/pLib.dir/src/consumer.cpp.o"
-  "/Users/teobaiguera/Documents/Study/MetaSensing/src/producer.cpp" "/Users/teobaiguera/Documents/Study/MetaSensing/build/CMakeFiles/pLib.dir/src/producer.cpp.o"
+  "/home/teo-ssd/multiThreading/src/consumer.cpp" "/home/teo-ssd/multiThreading/build/CMakeFiles/pLib.dir/src/consumer.cpp.o"
+  "/home/teo-ssd/multiThreading/src/producer.cpp" "/home/teo-ssd/multiThreading/build/CMakeFiles/pLib.dir/src/producer.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

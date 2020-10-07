@@ -10,7 +10,7 @@ SET(CMAKE_CXX_FLAGS "-std=c++14")
 ################################################################################
 SET(_project "metaSensingTest")
 PROJECT(${_project} CXX)
-
+set(THREADS_PREFER_PTHREAD_FLAG ON)
 MESSAGE( "  ")
 MESSAGE(STATUS "###############################################################")
 MESSAGE( "  ")
@@ -31,5 +31,7 @@ add_library(pLib src/consumer.cpp
             )
 
 
+find_package(Threads REQUIRED)
+
 add_executable( ${_project}  main.cpp  )
-target_link_libraries (${_project} PUBLIC pLib)
+target_link_libraries (${_project} PUBLIC pLib PRIVATE Threads::Threads)
