@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpLib.a  CMakeFiles/pLib.dir/src/consumer.cpp.o CMakeFiles/pLib.dir/src/producer.cpp.o
-/usr/bin/ranlib libpLib.a

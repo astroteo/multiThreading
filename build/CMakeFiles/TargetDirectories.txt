@@ -1,4 +1,0 @@
-/home/teo-ssd/multiThreading/build/CMakeFiles/edit_cache.dir
-/home/teo-ssd/multiThreading/build/CMakeFiles/rebuild_cache.dir
-/home/teo-ssd/multiThreading/build/CMakeFiles/pLib.dir
-/home/teo-ssd/multiThreading/build/CMakeFiles/metaSensingTest.dir

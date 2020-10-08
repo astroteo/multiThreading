@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++14   CMakeFiles/metaSensingTest.dir/main.cpp.o  -o metaSensingTest -rdynamic libpLib.a -pthread 
