@@ -1,5 +1,5 @@
 
-#include <thread>
+
 #include "consumer.h"
 #include "producer.h"
 
@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
   condition_variable producer_cv,consumer_cv;
 
   //Instances
-  Consumer * consumer = new Consumer(shared_queue);
+  Consumer *consumer = new Consumer(shared_queue);
   consumer->mx = &mx;
   consumer->consumer_cv = &consumer_cv;
   consumer->producer_cv = &producer_cv;

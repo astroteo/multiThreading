@@ -14,20 +14,24 @@ Producer::doJob()
   {
     unique_lock<mutex> lk(*mx);
 
-    if (q->size() < 100)
+    if (q->size() < 10)
     {
-      counter++;
+      counter < 100 ? counter++ : counter=1;
+
       q->push(counter);
-      consumer_cv->notify_all();
+      cout << counter << endl;
 
     }
     else
     {
-      cout << "--------"<<endl;
-      counter = 0;
-      this->producer_cv->wait(lk, [this]{ return this->q->size() < 100; });
+
+      consumer_cv->notify_all();
+      producer_cv->wait(lk, [this]{ return q->size() < 10; });
+
+
     }
+
     lk.unlock();
-    //this_thread::sleep_for(chrono::milliseconds(random() % 400 + 100));
+    this_thread::sleep_for(chrono::milliseconds(random() % 400 + 100));
   }
 }

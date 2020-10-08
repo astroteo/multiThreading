@@ -19,25 +19,25 @@ Consumer::doJob()
 
       if(!q->empty())
       {
+        this->sum += q->back();
+        q->pop();
 
-        for (int i = q->size()-1; i==0; i--)
-        {
-          this->sum += q->front();
-          q->pop();
-          producer_cv->notify_all();
 
-        }
-
-        cout << "buffer sum = " << this->sum << endl;
-        cout << "buffer length = " << q->size() << endl;
+        //cout << "buffer sum = " << this->sum << endl;
+        //cout << "buffer length = " << q->size() << endl;
       }
       else
       {
+        producer_cv->notify_all();
+        cout << "==>buffer sum = " << this->sum << endl;
+        cout << "==>buffer length = " << q->size() << endl;
+        cout << "---------------------------------------"<<endl;
+
         this->sum = 0;
         consumer_cv->wait(lk, [this]{ return !q->empty(); });
       }
 
       lk.unlock();
-      //this_thread::sleep_for(chrono::milliseconds(random() % 400 + 100));
+      this_thread::sleep_for(chrono::milliseconds(random() % 400 + 100));
   }
 }

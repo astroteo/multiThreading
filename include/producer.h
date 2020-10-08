@@ -5,6 +5,8 @@
 #include <queue>
 #include <mutex>
 #include <condition_variable>
+#include <thread>
+
 using namespace std;
 
 class Producer
