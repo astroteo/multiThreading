@@ -35,10 +35,11 @@ Producer::doJob()
     {
       consumer_cv->notify_all();
       producer_cv->wait(lk, [this]{ return q->size() < BUFFER_SIZE; });
+      lk.unlock();
     }
 
     this_thread::sleep_for(chrono::milliseconds(random() % 400 + 100));
-    lk.unlock();
+
 
   }
   terminate();

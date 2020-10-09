@@ -13,9 +13,10 @@ Consumer::doJob()
 {
   this_thread::sleep_for(chrono::milliseconds(50));
   cout << "consumer thread started"<<endl;
-  
+
   while(*work_flag)
   {
+
     unique_lock<std::mutex> lk(*mx);
     if(!q->empty())
     {

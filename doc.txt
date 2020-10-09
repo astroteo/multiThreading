@@ -50,7 +50,7 @@ The following logic holds:
 3. In parallel to {1.,2.} the commander-thread(c.) waits for the input from user
    and once a key+enter is inputted by user, the 'work_flag' variable is set to
    false.
-   A pointer to 'shared_queue' is also passed to the commander-thread therefore
+   A pointer to 'shared_queue' is also passed to the commander-thread, therefore
    the commander function will print to monitor the remaining values in the queue.
 ________________________________________________________________________________
 To be improved:
