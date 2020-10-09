@@ -33,8 +33,8 @@ a. consumer
 b. producer
 c. commander
   => a single buffer 'shared_queue' (std::queue) is shared among the 3 threads
-  => a 'work_flag' (boolean), commanding the execution, is also shared among
-      the threads.
+  =>  the boolean 'work_flag', commanding the execution, is also shared among
+      all threads.
 
 The following logic holds:
 
@@ -50,8 +50,8 @@ The following logic holds:
 3. In parallel to {1.,2.} the commander-thread(c.) waits for the input from user
    and once a key+enter is inputted by user, the 'work_flag' variable is set to
    false.
-   The commander thread, is also sharing the 'shared_queue' and will be print to
-   monitor the remaining values in the queue.
+   A pointer to 'shared_queue' is also passed to the commander-thread therefore
+   the commander function will print to monitor the remaining values in the queue.
 ________________________________________________________________________________
 To be improved:
 
