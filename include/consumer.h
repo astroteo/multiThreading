@@ -20,6 +20,8 @@ class Consumer
     mutex *mx = nullptr;
     condition_variable *producer_cv= nullptr;
     condition_variable *consumer_cv= nullptr;
+    bool *work_flag = nullptr;
+    bool on_exit_flag = false;
     int sum;
 
   };

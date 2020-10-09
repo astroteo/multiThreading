@@ -22,11 +22,12 @@ MESSAGE( "  ")
 # Include files:
 ################################################################################
 INCLUDE_DIRECTORIES("include")
-################################################################################
 
-####################################################  Program(s)
-#file(GLOB ODE_SRCs "src/*.cpp" ) # <= not preferred here because not all srcs are used for all subprojects
-add_library(pLib src/consumer.cpp
+
+################################################################################
+# Program
+add_library(
+            pLib src/consumer.cpp
                  src/producer.cpp
             )
 

@@ -1,22 +1,31 @@
 #include "producer.h"
+
 using namespace std;
 
+//Constructor
 Producer::Producer(queue<int> *q_)
 {
   cout<< " created producer " << endl;
-  this->q = q_;
+  q = q_;
+
 }
 
+// Threaed function
 void
 Producer::doJob()
 {
-  while(true)
+
+  //sleep 10ms => since with consumer
+  this_thread::sleep_for(chrono::milliseconds(150));
+  cout << "producer thread started"<<endl;
+
+  while(*work_flag)
   {
     unique_lock<mutex> lk(*mx);
 
-    if (q->size() < 10)
+    if (q->size() < BUFFER_SIZE && *work_flag)
     {
-      counter < 100 ? counter++ : counter=1;
+      counter < 100 ? counter++ : counter = 1;
 
       q->push(counter);
       cout << counter << endl;
@@ -24,14 +33,14 @@ Producer::doJob()
     }
     else
     {
-
       consumer_cv->notify_all();
-      producer_cv->wait(lk, [this]{ return q->size() < 10; });
-
-
+      producer_cv->wait(lk, [this]{ return q->size() < BUFFER_SIZE; });
     }
 
-    lk.unlock();
     this_thread::sleep_for(chrono::milliseconds(random() % 400 + 100));
+    lk.unlock();
+
   }
+  terminate();
+
 }

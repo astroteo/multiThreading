@@ -6,6 +6,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <thread>
+#include "constants.h"
 
 using namespace std;
 
@@ -22,5 +23,6 @@ class Producer
     mutex *mx = nullptr;
     condition_variable *producer_cv= nullptr;
     condition_variable *consumer_cv= nullptr;
+    bool *work_flag = nullptr;
 
   };
