@@ -1,0 +1,63 @@
+________________________________________________________________________________
+Compile and run:
+
+code was run both on linux (ubuntu 16.04) and on MacOSX catalina 10.15.2
+
+compile: mkdir build
+         cd build
+         cmake ..
+         make
+
+run: ./metaSensingTest
+
+!TO STOP Producer/Consumer, END PROGRAM AND
+                   PRINT THE RESIDUAL VALUES, PLEASE PRESS A KEY AND THAN ENTER!
+
+________________________________________________________________________________
+About implementation:
+
+code is implemented in object oriented C++ making usage of the STL, of the
+thread library and mutex.
+
+two classes have been created {Producer,Consumer}. The requested functionality
+has been implemented for both classes into the 'doJob()' function.
+
+Such function(s) are run in a dedicated thread detached from main and makes
+usage of a unique mutex for acquiring priority.
+
+A 'commander thread', joined to the main thread, is instead used for acquiring
+keyboard input and command the 'exit' of the producer consumer.
+
+Three threads are running in parallel:
+a. consumer
+b. producer
+c. commander
+  => a single buffer 'shared_queue' (std::queue) is shared among the 3 threads
+  => a 'work_flag' (boolean), commanding the execution, is also shared among
+      the threads.
+
+The following logic holds:
+
+1. The producer acquires priority on the queue('shared_queue') and pushes numbers
+   in between [0,100] until when the size of the container is equal to
+   BUFFER_SIZE ( settled to 10 in constants.h).At this point the priority is
+   released and the consumer acquires the lock.
+
+2. The consumer acquires priority and empty the queue (pop()) until when the
+   container is empty.
+  When the queue is empty will notify to producer (back to 1.)
+
+3. In parallel to {1.,2.} the commander-thread(c.) waits for the input from user
+   and once a key+enter is inputted by user, the 'work_flag' variable is set to
+   false.
+   The commander thread, is also sharing the 'shared_queue' and will be print to
+   monitor the remaining values in the queue.
+________________________________________________________________________________
+To be improved:
+
+  + the constuctor(s) are pretty rough, can find a better way to pass pointers
+    to mutex and condition_variable.
+
+  + to sync threads an artifact of 'time delay' has been used to ensure that the
+     producer will start later than the producer.More sophisticate logic of
+     conditionals could be used instead.
