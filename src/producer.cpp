@@ -34,7 +34,7 @@ Producer::doJob()
     else
     {
       consumer_cv->notify_all();
-      producer_cv->wait(lk, [this]{ return q->size() < BUFFER_SIZE; });
+      producer_cv->wait(lk, [this]{ return q->size() <= BUFFER_SIZE; });
       lk.unlock();
     }
 
